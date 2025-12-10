@@ -1,12 +1,19 @@
 import React, { useState } from "react";
-import "./Projects.css";
+import "./projects.css"; // make sure the filename matches exactly
+
+// 🔹 Import images so Vite can bundle them in the build
+import nbaImg from "../../assets/NBA Project.png";
+import smokeImg from "../../assets/Smoke and Insurance Project.png";
+import diabetesImg from "../../assets/Diabetes.png";
+import geneEnvImg from "../../assets/Gene-Environment Interaction.png";
+import missingImg from "../../assets/Missing Data Imputation & Regression Modeling.png";
 
 const projects = [
   {
     title: "NBA Database Dashboard",
     description:
       "Full-stack NBA analytics dashboard using 2023–2024 playoff data, with MySQL, Python (PCA/MDS), and D3.js visualizations for interactive player and team insights.",
-    image: "src/assets/NBA Project.png", // keep your existing path
+    image: nbaImg,
     tools: [
       "Python",
       "JavaScript",
@@ -23,7 +30,7 @@ const projects = [
     title: "Smoking & Insurance Cost Analysis",
     description:
       "Modeled medical charges from a Kaggle dataset and showed smokers incur ~5× higher costs than non-smokers using log-transformed regression and visual analysis.",
-    image: "src/assets/Smoke and Insurance Project.png",
+    image: smokeImg,
     tools: [
       "Python",
       "Jupyter Notebook",
@@ -39,7 +46,7 @@ const projects = [
     title: "Diabetes Progression Analysis",
     description:
       "Regression-based analysis of scikit-learn’s medical dataset to identify key predictors of diabetes progression such as BMI and cholesterol.",
-    image: "src/assets/Diabetes.png",
+    image: diabetesImg,
     tools: [
       "Python",
       "scikit-learn",
@@ -54,8 +61,7 @@ const projects = [
     title: "Gene–Environment Interaction Modeling",
     description:
       "R modeling pipeline evaluating gene–environment effects using multiple regression, Box–Cox transforms, and stepwise model selection.",
-
-    image: "/src/assets/Gene-Environment Interaction.png",
+    image: geneEnvImg,
     tools: [
       "R",
       "RStudio",
@@ -72,7 +78,7 @@ const projects = [
     title: "Missing Data Imputation & Regression Modeling",
     description:
       "Applied multiple imputation (mice) to recover missing data, then fit a regression model validated with ANOVA, achieving an adjusted R² of 0.80.",
-    image: "src/assets/Missing Data Imputation & Regression Modeling.png",
+    image: missingImg,
     tools: [
       "R",
       "RStudio",
@@ -102,10 +108,6 @@ export default function Projects() {
     <section id="projects" className="projects-section">
       <div className="projects-inner">
         <h2 className="projects-title">Projects</h2>
-        {/* <p className="projects-subtitle">
-          A selection of data science and analytics projects across modeling,
-          visualization, and database design.
-        </p> */}
 
         <div className="row g-4">
           {projects.map((p, i) => (
