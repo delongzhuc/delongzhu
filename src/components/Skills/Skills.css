@@ -1,0 +1,84 @@
+/* section */
+.skills-section {
+  padding: 130px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+/* title */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.skills-section h2 {
+  font-size: clamp(2rem, 4vw, 3rem); /* Responsive and larger */
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #fff;
+}
+
+
+/* cards */
+.skill-card {
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 28px 24px;                 /* more breathing room */
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(168, 85, 247, .15); /* subtle purple glow */
+}
+
+/* icon + title */
+.skill-icon {
+  font-size: 2.5rem;
+  color: #a855f7;
+  margin-bottom: 12px;
+}
+
+.skill-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+/* ---------- LISTS (bullets + centered block) ---------- */
+
+/* this fights global resets that kill bullets */
+.skill-list {
+  list-style: disc;                    /* show bullets */
+  list-style-position: inside;         /* bullets inside the box */
+  margin: 12px auto 0;                 /* center the whole list block */
+  padding-left: 0;                     /* inside bullets don't need extra left pad */
+  display: inline-block;               /* centers the list while keeping it compact */
+  text-align: left;                    /* but text itself stays left for readability */
+  max-width: 420px;                    /* prevents super-wide lines */
+}
+
+/* if your build has a global "ul { list-style: none }" reset, this wins via specificity */
+.skill-card .skill-list { list-style-type: disc; }
+
+/* list items */
+.skill-list li {
+  margin-bottom: .5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  transition: color .2s ease;
+}
+
+.skill-list li:hover { color: #a855f7; }
+
+/* optional: make very long lists (like IT) multi-column on large screens */
+.skill-card.it-card .skill-list {
+  columns: 2;
+  column-gap: 28px;
+}
+@media (max-width: 768px) {
+  .skill-card.it-card .skill-list { columns: 1; }
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Project One",
+    "description": "Short sentence about what this does and why it matters.",
+    "image": "https://via.placeholder.com/600x400",
+    "demo": "https://example.com",
+    "repo": "https://github.com/yourusername/project-one",
+    "tags": ["HTML","CSS","JS"]
+  },
+  {
+    "title": "Project Two",
+    "description": "Another concise description showcasing a different skill.",
+    "image": "https://via.placeholder.com/600x400",
+    "demo": "",
+    "repo": "https://github.com/yourusername/project-two",
+    "tags": ["API","Bootstrap"]
+  }
+]

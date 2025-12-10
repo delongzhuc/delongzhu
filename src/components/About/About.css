@@ -1,0 +1,51 @@
+.about-section {
+  padding-top: 0 !important;  /* Reduce top gap */
+  padding-bottom: 64px;  /* Keep enough bottom space */
+  margin-top: 0; /* Just in case */
+}
+
+#about {
+  scroll-margin-top: 100px;
+}
+
+/* Section title (e.g. "About Me") */
+.about-section h2 {
+  font-size: clamp(2rem, 4vw, 3rem); /* Responsive and larger */
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Paragraph content */
+.about-section p {
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  line-height: 1.8;
+  color: #d1d5e0;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-section {
+  padding: 80px 0;
+}
+
+.about-img {
+  border-radius: 12px; 
+  border: none;       
+  width: 100%;
+  max-width: 400px;
+}
+
+
+.about-text {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #d1d5db; /* Tailwind's text-gray-300 look */
+}
+
+.about-section .col-md-7 {
+  max-width: 600px;
+  margin: 0 auto;
+}

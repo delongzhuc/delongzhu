@@ -1,0 +1,138 @@
+/* ---------- Section ---------- */
+.experience-section {
+  padding: 100px 20px;
+  color: #fff;
+}
+.experience-section .section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 28px;
+  text-align: center;
+  color: #fff;
+}
+
+/* ---------- Timeline Shell ---------- */
+.exp-timeline {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 100px;               /* closer to spine */
+  --exp-spine-x: 40px;
+  --exp-accent: #a855f7;            /* brand purple */
+  --exp-progress: 0;                /* filled by JS 0..1 */
+  --exp-card-bg: #141414;           /* slight contrast to page bg */
+  --exp-card-border: #262626;       /* soft border */
+}
+
+/* spine (track) */
+.exp-spine {
+  position: absolute;
+  left: var(--exp-spine-x);
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #1b1b1b;
+  box-shadow: inset 0 0 8px rgba(255,255,255,.03);
+}
+
+/* progress fill */
+.exp-progress {
+  position: absolute;
+  left: var(--exp-spine-x);
+  top: 0;
+  width: 3px;
+  height: calc(var(--exp-progress) * 100%);
+  background: linear-gradient(180deg, var(--exp-accent), #22d3ee 80%);
+  box-shadow: 0 0 20px rgba(168, 85, 247, .35), 0 0 8px rgba(34, 211, 238, .25);
+}
+
+/* ---------- Items ---------- */
+.exp-list { list-style: none; margin: 0; padding: 0; }
+
+.exp-item {
+  position: relative;
+  margin: 18px 0 56px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+.exp-item.in { opacity: 1; transform: translateY(0); }
+
+/* ---------- Card ---------- */
+.exp-card {
+  position: relative;               /* anchor for the top-right dot */
+  margin-left: 10px;
+  background-color: var(--exp-card-bg);
+  border: 1px solid var(--exp-card-border);
+  border-radius: 14px;
+  padding: 22px 26px 22px 26px;     /* text slightly left; extra room on right for dot */
+  box-shadow: 0 6px 16px rgba(0,0,0,.35);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.exp-card:hover {
+  transform: translateY(-4px);
+  border-color: #303030;
+  box-shadow: 0 12px 26px rgba(168, 85, 247, .12);
+}
+
+/* ---------- Progress Dot (top-right loader) ---------- */
+.exp-dot {
+  position: absolute;
+  top: 12px;                        /* not glued to the corner */
+  right: 18px;
+  width: 25px; height: 25px;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 16px rgba(168,85,247,.35);
+
+  /* ring loader driven by --dot (0..1) */
+  background:
+    conic-gradient(from -90deg,
+      var(--exp-accent) calc(var(--dot, 0) * 360deg),
+      #2b2b2b 0),
+    radial-gradient(circle at center, #111 64%, transparent 65%),
+    radial-gradient(circle at center, transparent 60%, #2e2e2e 61%, transparent 62%);
+}
+
+/* ---------- Typography ---------- */
+.exp-role {
+  margin: 0 0 4px;
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+.exp-company {
+  color: var(--exp-accent);
+  text-decoration: none;
+}
+.exp-company:hover { text-decoration: underline; }
+
+.exp-meta {
+  color: #b8b8b8;
+  font-size: .95rem;
+  margin-bottom: 10px;
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+
+/* ---------- Bullets (indent right for cleaner read) ---------- */
+.exp-bullets {
+  list-style: disc;
+  list-style-position: outside;     /* true indent */
+  margin: 10px 0 0;
+  padding-left: 1.5rem;            /* move bullets right */
+}
+.exp-bullets li {
+  margin: .32rem 0;
+  font-size: .98rem;
+  line-height: 1.55;
+  color: #e7e7e7;
+  transition: color .2s ease;
+}
+.exp-bullets li:hover { color: var(--exp-accent); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .exp-timeline { padding-left: 64px; --exp-spine-x: 22px; }
+  .exp-card { padding: 18px 16px; }
+  .exp-role { font-size: 1.1rem; }
+}

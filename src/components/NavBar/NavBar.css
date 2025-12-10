@@ -1,0 +1,73 @@
+/* Smooth in-page scrolling */
+html { scroll-behavior: smooth; }
+
+/* Brighter, glassy top bar */
+.navbar{
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 15px 80px;
+  background: linear-gradient(90deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+
+/* Brand */
+.navbar .navbar-brand{
+  font-size: 22px; font-weight: 700; color: #fff; text-decoration: none; cursor: pointer;
+}
+
+/* Space links more than default Bootstrap */
+.navbar .navbar-nav{ display: flex; gap: 40px; }
+
+/* Base link */
+.navbar .nav-link{
+  color: #fff;
+  font-size: 18px; font-weight: 500;
+  text-decoration: none;
+  padding: 5px 8px;
+  position: relative;
+  transition: transform .25s ease, opacity .25s ease, color .25s ease;
+}
+
+/* Gradient token */
+:root{ --nav-grad: linear-gradient(90deg,#76e1fe,#7a7dfe,#e774f8); }
+
+/* Hover → gradient text + subtle scale */
+.navbar .nav-link:hover{
+  transform: scale(1.1);
+  opacity: .92;
+  background: var(--nav-grad);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent;
+}
+
+/* Active (Scrollspy adds .active) → keep gradient */
+.navbar .navbar-nav .nav-link.active{
+  background: var(--nav-grad);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent;
+  font-weight: 600;
+}
+
+/* Animated underline on hover/active */
+.navbar .nav-link::after{
+  content:"";
+  position: absolute; left: 8px; right: 8px; bottom: -4px;
+  height: 3px; border-radius: 3px;
+  background: var(--nav-grad);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .25s ease;
+}
+.navbar .nav-link:hover::after,
+.navbar .navbar-nav .nav-link.active::after{
+  transform: scaleX(1);
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px){
+  .navbar{ padding: 15px 30px; }
+  .navbar .navbar-nav{ gap: 20px; }
+  .navbar .nav-link{ font-size: 16px; }
+}

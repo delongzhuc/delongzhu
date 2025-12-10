@@ -1,0 +1,125 @@
+/* Home.css */
+
+/* Section with the top-center purple glow */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 160px 20px 0px;  /* reduce bottom padding from 40px to 20px */
+  text-align: center;
+
+  background: radial-gradient(
+    circle at 50% -18%,
+    rgba(120, 80, 180, 0.55) 0%,
+    rgba(20, 20, 30, 0.95) 48%,
+    #0d0d10 90%
+  );
+}
+
+
+/* Layout holder */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+
+  /* Make sure no other global .hero styles leak in */
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* ---------- Avatar + bottom glow ---------- */
+:root {
+  --avatar-size: 320px; /* desktop default size */
+}
+
+/* responsive sizes */
+@media (max-width: 1199px) { :root { --avatar-size: 260px; } }
+@media (max-width: 767px)  { :root { --avatar-size: 200px; } }
+
+.avatar {
+  position: relative;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+
+  /* nuke any stray backgrounds */
+  background: transparent !important;
+}
+
+.avatar img {
+  position: relative;
+  z-index: 1;
+  display: block; /* remove inline-image baseline gap */
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  background: transparent !important;
+  transition: transform 0.25s ease;
+}
+
+.avatar img:hover { transform: scale(1.02); }
+
+/* soft glow under the avatar */
+.avatar::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -18px;
+  width: 120%;
+  height: 60%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(123, 106, 232, 0.45) 0%,
+    rgba(123, 106, 232, 0.22) 55%,
+    transparent 72%
+  );
+  filter: blur(16px);
+  pointer-events: none;
+}
+
+/* ---------- Text styles ---------- */
+.hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  margin: 6px 0 2px;
+  font-weight: 700;
+  color: #fff; /* base for "Hi, I’m" */
+}
+
+/* gradient highlight just on the name */
+.hero h1 span {
+  background: linear-gradient(90deg, #4facfe 0%, #c471ed 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* subtitle / tagline */
+.hero p {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: #bfc3cf; /* softer than pure white */
+  margin-top: 6px;
+}
+
+.tagline {
+  margin-bottom: 4px; /* reduce this as needed */
+}
+
+.summary {
+  max-width: 720px;
+  margin-top: 10px;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  color: #d1d5e0;
+  line-height: 1.6;
+  text-align: center;
+  padding: 0 12px;
+  word-break: break-word;
+  
+}

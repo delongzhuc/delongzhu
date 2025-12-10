@@ -1,0 +1,127 @@
+/* ===== SECTION ===== */
+
+.contact-section {
+  color: #f9fafb;
+}
+
+.contact-title {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+}
+
+/* ===== BLOCKS ===== */
+
+.contact-block {
+  margin-bottom: 8px;
+}
+
+.contact-label {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+/* shared row style for p + a */
+.contact-value {
+  margin: 0;
+  font-size: 1.02rem;
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* clickable rows (phone/email) */
+.contact-link-row {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit; /* inherit white */
+}
+
+/* text spans */
+.contact-text {
+  color: #e5e7eb;
+}
+
+/* ===== CIRCLES ===== */
+
+.contact-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 2px solid #374151;
+  background: radial-gradient(circle at top, #111827, #020617 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease,
+    transform 0.18s ease, background 0.25s ease;
+}
+
+.contact-icon-svg {
+  width: 22px;
+  height: 22px;
+  fill: #9ca3af;
+}
+
+/* ===== HOVER: LOCATION / PHONE / EMAIL ===== */
+
+.contact-value:hover .contact-icon-circle {
+  border-color: #a855f7;
+  box-shadow: 0 10px 24px rgba(168, 85, 247, 0.4);
+  background: radial-gradient(circle at top, #1f2937, #020617 80%);
+  transform: translateY(-1px);
+}
+
+.contact-value:hover .contact-icon-svg {
+  fill: #e5e7eb;
+}
+
+.contact-value:hover .contact-text {
+  color: #a855f7;
+}
+
+/* ===== SOCIAL ICONS ===== */
+
+.contact-social-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-social-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-social-link:hover .contact-icon-circle {
+  border-color: #a855f7;
+  box-shadow: 0 10px 24px rgba(168, 85, 247, 0.4);
+  background: radial-gradient(circle at top, #1f2937, #020617 80%);
+  transform: translateY(-1px);
+}
+
+.contact-social-link:hover .contact-icon-svg {
+  fill: #e5e7eb;
+}
+
+.contact-social-link:hover .contact-text {
+  color: #a855f7;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .contact-block {
+    text-align: center;
+  }
+
+  .contact-social-list {
+    align-items: center;
+  }
+}

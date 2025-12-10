@@ -1,0 +1,106 @@
+:root {
+  --bg: #0b0d12;
+  --card: #10131a;
+  --text: #e6e6e6;
+  --muted: #a0a4ae;
+  --primary: #5a8dee;
+  --gradient: linear-gradient(90deg, #76e1fe, #7a7dfe, #e774f8);
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+.navbar {
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(8px);
+}
+.section-padding {
+  padding: 80px 0;
+}
+.bg-body {
+  background: var(--card);
+}
+.hero {
+  min-height: 75vh;
+  background: radial-gradient(
+    1200px 500px at 50% -20%,
+    rgba(90, 141, 238, 0.18),
+    transparent
+  );
+}
+.hero-avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.skill-card {
+  background: #0e1117;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  text-align: center;
+}
+.card {
+  background: #0e1117;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.card img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+a {
+  color: var(--primary);
+}
+a:hover {
+  opacity: 0.9;
+}
+footer {
+  color: var(--muted);
+}
+/* ==== Enhancements: brighter hero & avatar pop ==== */
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --gradient: linear-gradient(90deg, #76e1fe, #7a7dfe, #e774f8);
+}
+.hero {
+  min-height: 85vh;
+  background: radial-gradient(
+      1200px 600px at 50% -20%,
+      rgba(120, 160, 255, 0.38),
+      rgba(255, 140, 240, 0.28) 35%,
+      transparent 70%
+    ),
+    var(--bg);
+}
+.hero-avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease;
+}
+.hero-avatar:hover {
+  transform: scale(1.03);
+}
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about-section {
+  padding-top: 24px;
+  padding-bottom: 80px;
+}
+
