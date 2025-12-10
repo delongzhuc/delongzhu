@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import "./projects.css"; // make sure the filename matches exactly
-
-// 🔹 Import images so Vite can bundle them in the build
+import "./Projects.css";
 import nbaImg from "../../assets/NBA Project.png";
 import smokeImg from "../../assets/Smoke and Insurance Project.png";
 import diabetesImg from "../../assets/Diabetes.png";
@@ -13,7 +11,7 @@ const projects = [
     title: "NBA Database Dashboard",
     description:
       "Full-stack NBA analytics dashboard using 2023–2024 playoff data, with MySQL, Python (PCA/MDS), and D3.js visualizations for interactive player and team insights.",
-    image: nbaImg,
+    image: nbaImg, // ✅ FIXED
     tools: [
       "Python",
       "JavaScript",
@@ -30,7 +28,7 @@ const projects = [
     title: "Smoking & Insurance Cost Analysis",
     description:
       "Modeled medical charges from a Kaggle dataset and showed smokers incur ~5× higher costs than non-smokers using log-transformed regression and visual analysis.",
-    image: smokeImg,
+    image: smokeImg, // ✅ FIXED
     tools: [
       "Python",
       "Jupyter Notebook",
@@ -46,7 +44,7 @@ const projects = [
     title: "Diabetes Progression Analysis",
     description:
       "Regression-based analysis of scikit-learn’s medical dataset to identify key predictors of diabetes progression such as BMI and cholesterol.",
-    image: diabetesImg,
+    image: diabetesImg, // ✅ FIXED
     tools: [
       "Python",
       "scikit-learn",
@@ -61,7 +59,7 @@ const projects = [
     title: "Gene–Environment Interaction Modeling",
     description:
       "R modeling pipeline evaluating gene–environment effects using multiple regression, Box–Cox transforms, and stepwise model selection.",
-    image: geneEnvImg,
+    image: geneEnvImg, // ✅ FIXED
     tools: [
       "R",
       "RStudio",
@@ -78,7 +76,7 @@ const projects = [
     title: "Missing Data Imputation & Regression Modeling",
     description:
       "Applied multiple imputation (mice) to recover missing data, then fit a regression model validated with ANOVA, achieving an adjusted R² of 0.80.",
-    image: missingImg,
+    image: missingImg, // ✅ FIXED
     tools: [
       "R",
       "RStudio",
